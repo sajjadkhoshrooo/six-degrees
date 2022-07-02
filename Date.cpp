@@ -3,9 +3,9 @@
 #include <cstdlib>
 #include <vector>
 using namespace std;
-                                                                                
 
-class Date {
+class Date
+{
 public:
     Date(int d, int m, int y);
     void set_date(int d, int m, int y);
@@ -14,21 +14,22 @@ public:
     int get_day() { return day; }
     int get_month() { return month; }
     int get_year() { return year; }
+
 private:
     int day;
     int month;
     int year;
 };
-                                                                                
+
 Date::Date(int d, int m, int y)
 {
     set_date(d, m, y);
 }
-                                                                                
+
 bool is_leap_year(int year)
 {
     int r = year % 33;
-    return r==1 || r==5 || r==9 || r==13 || r==17 || r==22 || r==26 || r==30;
+    return r == 1 || r == 5 || r == 9 || r == 13 || r == 17 || r == 22 || r == 26 || r == 30;
 }
 
 int days_of_month(int m, int y)
@@ -58,8 +59,9 @@ void Date::print_date()
     cout << day << '/' << month << '/' << year << endl;
 }
 
-Date str_to_date(string s) {
-    //TODO: Handle formatting errors
+Date str_to_date(string s)
+{
+    // TODO: Handle formatting errors
     int slash_pos = s.find('/');
     int d = atoi(s.substr(0, slash_pos).c_str());
     s = s.substr(slash_pos + 1);
@@ -70,14 +72,16 @@ Date str_to_date(string s) {
     return Date(d, m, y);
 }
 
-class Person {
+class Person
+{
 public:
     Person(string n, int d, int m, int y);
     Date get_bdate() { return bdate; }
     string get_name() { return name; }
+
 private:
     string name;
-    Date bdate; 
+    Date bdate;
 };
 
 Person::Person(string n, int d, int m, int y)
