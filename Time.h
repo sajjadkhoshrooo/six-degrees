@@ -9,6 +9,8 @@ class Time
 public:
     Time(int _hour, int _minute);
     Time(int _hour);
+    Time() { hour = 0; minute = 0;}
+    void set_time(int h, int m);
     static bool is_valid_hour(int _hour);
     static bool is_valid_minute(int _minute);
     int get_hour() { return hour; }
@@ -54,4 +56,14 @@ bool Time::is_valid_minute(int _minute)
 int main()
 {
     
+}
+void Time::set_time(int h, int m)
+{
+    if (!is_valid_hour(h) || !is_valid_minute(m))
+    {
+        cout << "Bad inputs!" << endl;
+        abort();
+    }
+    hour = h;
+    minute = m;
 }
