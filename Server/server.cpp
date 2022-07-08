@@ -10,8 +10,8 @@ Server::Server(QWidget *parent) : QMainWindow(parent),
     timer = new QTimer;
     sqlitedb = new SQLiteDB;
     tcpServer = new QTcpServer(this);
-
-    if (!tcpServer->listen(QHostAddress::Any, 55155))
+    tcpServer->listen(QHostAddress::Any, 1025);
+    if (!tcpServer->isListening())
     {
         QMessageBox::critical(this, tr("Chat Server"),
                               tr("Unable to start the server: %1.").arg(tcpServer->errorString()));
@@ -26,13 +26,13 @@ void Server::NewConnect()
 {
     User *newUser = new User;
     newUser->setSocket(tcpServer->nextPendingConnection());
-    QTcpSocket *newSocket = newUser->getSocket();                 // Подключение нового клиента
+    QTcpSocket *newSocket = newUser->getSocket();                 // Connecting a new client
 
     connect(newSocket, SIGNAL(disconnected()), this, SLOT(onDisconnect()));
     connect(newSocket, SIGNAL(readyRead()), this, SLOT(getMessage()));
     clientConnections.append(newUser);
 
-    qDebug() << "Новое соединение" << newSocket->socketDescriptor();
+    qDebug() << "New connection" << newSocket->socketDescriptor();
 
     QByteArray *buffer = new QByteArray();
     qint32 *s = new qint32(0);
@@ -73,7 +73,7 @@ void Server::onDisconnect()
 
 void Server::SendResponseToID(QString message, int ID)
 {
-    // - Отправка конкретному пользователю
+    // - Sending to a specific user
 
     for (auto i : clientConnections)
         if (i->getSocket()->socketDescriptor() == ID)
@@ -191,8 +191,8 @@ void Server::getMessage()
             // FNDN - Find Negative
             SendResponseToID("FNDP" + result, clientSocket->socketDescriptor());
             sqlitedb->addChatTable(whoFind, findUser);
-            sqlitedb->addChatTable(findUser, whoFind);  // Инвайт
-            sqlitedb->FindInDB(whoFind, findUser);      // инвайт
+            sqlitedb->addChatTable(findUser, whoFind);  // Invite
+            sqlitedb->FindInDB(whoFind, findUser);      // invite
             ui->chatDialog->addItem(timeconnect() + " - " + whoFind + " and " + findUser + " are now friends" );
 
             for (auto i : clientConnections)

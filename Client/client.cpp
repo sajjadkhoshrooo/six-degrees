@@ -108,7 +108,7 @@ void Client::RecieveData(QString str, QString pas, QString pubKey)
           }
 
       QString hostname = "127.0.0.1";
-      quint32 port = 55155;
+      quint32 port = 1025;
       tcpSocket->abort();
       tcpSocket->connectToHost(hostname, port);
 

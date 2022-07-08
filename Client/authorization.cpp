@@ -17,7 +17,7 @@ Authorization::Authorization(QWidget *parent) :
   passhash = new HashMD5;
 
   socket->abort();
-  socket->connectToHost("127.0.0.1", 55155);
+  socket->connectToHost("127.0.0.1", 1025);
 
   connect(ui->log_in, SIGNAL(clicked()), this, SLOT(onButtonSendUser()));
   connect(socket, SIGNAL(readyRead()), this, SLOT(GetMessage()));

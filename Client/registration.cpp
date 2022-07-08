@@ -84,7 +84,7 @@ void Registration::on_accept_button_clicked()
   }
 
   socket->abort();
-  socket->connectToHost("127.0.0.1", 55155);
+  socket->connectToHost("127.0.0.1", 1025);
 
   // use password = md5(md5(password) + salt)
 
