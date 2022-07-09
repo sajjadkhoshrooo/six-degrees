@@ -458,7 +458,6 @@ background-color: rgb(99, 137, 168);
        <font>
         <family>Sitka Small</family>
         <pointsize>16</pointsize>
-        <weight>50</weight>
         <bold>false</bold>
         <stylestrategy>PreferDefault</stylestrategy>
        </font>
@@ -1159,7 +1158,6 @@ color: rgb(96, 125, 139);</string>
           <property name="font">
            <font>
             <pointsize>18</pointsize>
-            <weight>50</weight>
             <italic>false</italic>
             <bold>false</bold>
            </font>
@@ -1914,7 +1912,6 @@ color: rgb(255, 255, 255);</string>
     <property name="font">
      <font>
       <family>Sitka Text</family>
-      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
       <strikeout>false</strikeout>
@@ -1925,7 +1922,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>W H A V E T A L K</string>
+     <string>SIX-DEGREES</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2010,9 +2007,9 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="html">
      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;Please select a chat to start messaging  &lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;or add new friends to communicate&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>

@@ -1568,7 +1568,7 @@ void Client::ShowContextMenuForChat(const QPoint &pos)
       }
 
   menu->popup(mapToGlobal(newPos));
-  connect(delSelect, SIGNAL(triggered()), this, SLOT(ClearSelect())); // Обработчик удаления записи
+  connect(delSelect, SIGNAL(triggered()), this, SLOT(ClearSelect())); // record deletion handler
   connect(deleteDevice, SIGNAL(triggered()), this, SLOT(ClearHistory()));
 }
 
@@ -1586,7 +1586,7 @@ void Client::ShowContextMenuForWidget(const QPoint &pos)
 
   QMenu * menu = new QMenu(this);
   QAction * deleteDevice = new QAction(lan_dict.value("ContextDelUser"), this);
-  connect(deleteDevice, SIGNAL(triggered()), this, SLOT(DeleteUser())); // Обработчик удаления записи
+  connect(deleteDevice, SIGNAL(triggered()), this, SLOT(DeleteUser())); // record deletion handler
   menu->addAction(deleteDevice);
   menu->popup(mapToGlobal(newPos));
 }

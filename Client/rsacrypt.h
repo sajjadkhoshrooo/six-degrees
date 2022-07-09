@@ -26,7 +26,7 @@ public:
   void GenerationKeys();
   int GetE();
   int GetModule();
-  int GetD(); //Временно, для теста.
+  int GetD(); //Temporarily, for testing purposes.
 };
 
 #endif // RSACRYPT_H
